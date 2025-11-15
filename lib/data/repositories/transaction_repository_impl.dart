@@ -1,7 +1,7 @@
 import 'package:drift/drift.dart'; // For Value/Companion
 import '../../domain/entities/category.dart' as domain;
-import '../entities/transaction_entity.dart';
-import '../repositories/transaction_repository.dart';
+import '../../domain/entities/transaction_entity.dart';
+import '../../domain/repositories/transaction_repository.dart';
 import '../../data/datasources/local/app_database.dart'; // Drift generated classes
 
 class TransactionRepositoryImpl implements TransactionRepository {

@@ -3,6 +3,7 @@ import 'package:drift/drift.dart';
 import 'package:drift/native.dart';
 import 'package:path/path.dart' as p;
 import 'package:path_provider/path_provider.dart';
+import 'daos/transactions_dao.dart';
 
 part 'app_database.g.dart';
 
@@ -33,7 +34,7 @@ class Categories extends Table {
   Set<Column> get primaryKey => {id};
 }
 
-@DriftDatabase(tables: [Transactions, Categories])
+@DriftDatabase(tables: [Transactions, Categories], daos: [TransactionsDao])
 class AppDatabase extends _$AppDatabase {
   AppDatabase() : super(_openConnection());
 

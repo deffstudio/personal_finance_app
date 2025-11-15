@@ -2,6 +2,7 @@ import 'package:get_it/get_it.dart';
 import '../../data/datasources/local/app_database.dart';
 import '../../data/repositories/transaction_repository_impl.dart';
 import '../../domain/repositories/transaction_repository.dart';
+import '../../presentation//bloc/transaction_list/transaction_list_bloc.dart';
 
 final sl = GetIt.instance; // sl = Service Locator
 
@@ -17,5 +18,8 @@ Future<void> init() async {
     () => TransactionRepositoryImpl(sl()),
   );
 
-  // 3. (Future) We will register BloCs here later.
+  // 3. Presentation (BloCs)
+  sl.registerFactory(
+    () => TransactionListBloc(sl()),
+  );
 }

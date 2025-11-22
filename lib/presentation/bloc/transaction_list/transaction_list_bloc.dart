@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import '../../../domain/entities/transaction_entity.dart';
-import '../../../domain/repositories/transaction_repository.dart';
+import 'package:personal_finance_app/domain/entities/transaction_entity.dart';
+import 'package:personal_finance_app/domain/repositories/transaction_repository.dart';
 
 part 'transaction_list_event.dart';
 part 'transaction_list_state.dart';

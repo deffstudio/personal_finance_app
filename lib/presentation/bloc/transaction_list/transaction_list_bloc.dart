@@ -13,6 +13,7 @@ class TransactionListBloc
   TransactionListBloc(this.repository) : super(TransactionListInitial()) {
     // Event Handler
     on<LoadTransactions>(_onLoadTransactions);
+    on<AddTransaction>(_onAddTransaction);
   }
 
   Future<void> _onLoadTransactions(
@@ -32,6 +33,17 @@ class TransactionListBloc
       );
     } catch (e) {
       emit(TransactionListError(e.toString()));
+    }
+  }
+
+  Future<void> _onAddTransaction(
+    AddTransaction event,
+    Emitter<TransactionListState> emit,
+  ) async {
+    try {
+      await repository.addTransaction(event.transaction);
+    } catch (e) {
+      emit(TransactionListError("Failed to add transaction $e"));
     }
   }
 }

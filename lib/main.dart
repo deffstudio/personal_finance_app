@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'core/services/service_locator.dart' as di; // di = dependency injection
+import 'package:personal_finance_app/core/services/service_locator.dart'
+    as di; // di = dependency injection
+import 'package:personal_finance_app/presentation/pages/home_page.dart';
 
 void main() async {
   // Ensure Flutter bindings are initialized before doing async work
@@ -22,11 +24,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         useMaterial3: true,
       ),
-      home: const Scaffold(
-        body: Center(
-          child: Text('Module 2 Complete: Architecture Ready'),
-        ),
-      ),
+      home: const HomePage(),
     );
   }
 }
